@@ -72,7 +72,7 @@ public class CiudadService implements CiudadRepository {
 
     @Override
     public <S extends Ciudad> S save(S entity) {
-        return null;
+        return ciudadRepository.save(entity);
     }
 
     @Override
