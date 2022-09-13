@@ -12,6 +12,9 @@ public class TipoDocumento {
     private String nombre;
     private String descripcion;
 
+    public TipoDocumento() {
+
+    }
 
     public TipoDocumento(String nombre, String descripcion) {
         this.nombre = nombre;
