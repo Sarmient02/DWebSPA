@@ -11,6 +11,10 @@ public class Ciudad {
     private String nombre;
     private String descripcion;
 
+    public Ciudad() {
+
+    }
+
     public Ciudad(String nombre, String descripcion) {
         this.nombre = nombre;
         this.descripcion = descripcion;
