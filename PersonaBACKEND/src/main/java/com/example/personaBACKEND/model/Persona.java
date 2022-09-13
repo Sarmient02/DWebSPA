@@ -27,7 +27,9 @@ public class Persona {
     @JoinColumn (name="id_ciudad")
     private Ciudad lugarResidencia;
 
+    public Persona(){
 
+    }
     public Persona(String nombre, String apellido, String documento, String fechanacimiento, String email, String telefono, String username, String password, TipoDocumento tipoDocumento, Ciudad lugarResidencia) {
         this.nombre = nombre;
         this.apellido = apellido;
