@@ -72,7 +72,7 @@ public class TipoDocumentoService implements TipoDocumentoRepository {
 
     @Override
     public <S extends TipoDocumento> S save(S entity) {
-        return null;
+        return tipoDocumentoRepository.save(entity);
     }
 
     @Override
