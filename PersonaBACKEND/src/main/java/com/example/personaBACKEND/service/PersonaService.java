@@ -73,7 +73,7 @@ public class PersonaService implements PersonaRepository {
 
     @Override
     public <S extends Persona> S save(S entity) {
-        return null;
+        return personaRepository.save(entity);
     }
 
     @Override
