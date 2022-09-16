@@ -22,6 +22,11 @@ public class PersonaREST {
         return ResponseEntity.ok(personaService.findAll());
     }
 
+    @GetMapping (value = "{id}")
+    private ResponseEntity<Persona> getPersonaByID (@PathVariable("id") long id){
+        return ResponseEntity.ok(personaService.findPersonaById(id));
+    }
+
     @PostMapping
     private ResponseEntity<Persona> savePersona (@RequestBody Persona persona){
         try {

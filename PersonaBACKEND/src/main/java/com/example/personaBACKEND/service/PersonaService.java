@@ -41,6 +41,16 @@ public class PersonaService implements PersonaRepository {
         return null;
     }
 
+    public Persona findPersonaById(long id){
+        Persona personaEncontrada = new Persona();
+        List<Persona> personas = personaRepository.findAll();
+        for(int i=0; i<personas.size();i++){
+            if(personas.get(i).getId()==id) {
+                personaEncontrada = personas.get(i);
+            }
+        }
+        return personaEncontrada;
+    }
     @Override
     public long count() {
         return 0;
@@ -128,7 +138,7 @@ public class PersonaService implements PersonaRepository {
 
     @Override
     public Persona getById(Long aLong) {
-        return null;
+        return personaRepository.getById(aLong);
     }
 
     @Override
