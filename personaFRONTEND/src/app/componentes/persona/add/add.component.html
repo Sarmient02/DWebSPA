@@ -1,0 +1,85 @@
+<section class="hero is-fullheight-with-navbar">
+    <div class="hero-body has-text-centered">
+        <div class="container box">
+            <h1 class="title is-1">Crear nueva Persona</h1>
+            <form [formGroup]="personaForm" (ngSubmit)="guardar()">
+                <div class="columns is-multiline">
+                    <div class="column is-half">
+                        <p class="field">
+                            <label class="label" style="margin-bottom:12px">Nombres</label>
+                            <input type="text" name="name" class="input" id="id_name" formControlName="nombre" required>
+                        </p>
+                    </div>
+                    <div class="column is-half">
+                        <p class="field">
+                            <label class="label" style="margin-bottom:12px">Apellidos</label>
+                            <input type="text" name="lastname" class="input" id="id_lastname" formControlName="apellido" required>
+                        </p>
+                    </div>
+                    <div class="column is-half">
+                        <div class="field">
+                            <label class="label" style="margin-bottom:12px">Tipo de Documento</label>
+                            <div class="select is-fullwidth">
+                                <select name="tipodocumento" id="tipodocumento" formControlName="tipodocumento">
+                                    <option selected="" disabled="" value="">Seleccione un tipo de documento</option>                                
+                                    <option [ngValue]="item" *ngFor="let item of documentos">{{item.nombre}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-half">
+                        <p class="field">
+                            <label class="label" style="margin-bottom:12px">Documento</label>
+                            <input type="text" name="documento" id="documento" class="input"  formControlName="documento">
+                        </p>
+                    </div>
+                    <div class="column is-half">
+                        <div class="field">
+                            <label class="label" style="margin-bottom:12px">Lugar de Residencia</label>
+                            <div class="select is-fullwidth">
+                                <select name="lugarresidencia" id="lugarresidencia" formControlName="lugarresidencia">
+                                    <option selected="" disabled="" value="">Seleccione una ciudad</option>                                
+                                    <option [ngValue]="item" *ngFor="let item of ciudades">{{item.nombre}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-half">
+                        <div class="field">
+                            <label class="label" style="margin-bottom:12px">Fecha de Nacimiento</label>
+                            <input type="date" name="fechanacimiento" class="input" id="fechanacimiento" formControlName="fechanacimiento">
+                        </div>
+                    </div>
+                    <div class="column is-half">
+                        <p class="field">
+                            <label class="label" style="margin-bottom:12px">Email</label>
+                            <input type="email" name="email" class="input" id="email" formControlName="email" required>
+                        </p>
+                    </div>
+                    <div class="column is-half">
+                        <p class="field">
+                            <label class="label" style="margin-bottom:12px">Teléfono</label>
+                            <input type="text" name="telefono" class="input" id="telefono" formControlName="telefono">
+                        </p>
+                    </div>
+                    <div class="column is-half">
+                        <p class="field">
+                            <label class="label" style="margin-bottom:12px">Usuario</label>
+                            <input type="text" name="username" class="input" id="username" formControlName="username">
+                        </p>
+                    </div>
+                    <div class="column is-half">
+                        <p class="field">
+                            <label class="label" style="margin-bottom:12px">Contraseña</label>
+                            <input type="password" name="password" class="input" id="password" formControlName="password">
+                        </p>
+                    </div>
+                </div>
+                
+                <button type="submit" [disabled]="personaForm.invalid" class="button is-primary" style="margin: 12px;">Guardar</button>
+                
+                <a class="button is-danger" style="margin: 12px;" (click)="cancelar()">Cancel</a>
+            </form>
+        </div>
+    </div>
+</section>

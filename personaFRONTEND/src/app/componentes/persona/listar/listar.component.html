@@ -1,0 +1,70 @@
+<section class="hero is-fullheight-with-navbar">
+    <div class="hero-body has-text-centered">
+        <div class="container box">
+            <h1 class="title is-1">Lista de Personas</h1>
+            <div class="columns">
+                <table class="table is-striped has-text-centered is-hoverable is-bordered">
+                    <thead>
+                        <tr>
+                            <th class="has-text-centered">id</th>
+                            <th class="has-text-centered">Nombre</th>
+                            <!--<th class="has-text-centered">Tipo de Documento</th>-->
+                            <th class="has-text-centered">Documento</th>
+                            <th class="has-text-centered">Lugar de Residencia</th>
+                            <!--<th class="has-text-centered">Fecha de Nacimiento</th>-->
+                            <th class="has-text-centered">Email</th>
+                            <th class="has-text-centered">Teléfono</th>
+                            <th class="has-text-centered">Usuario</th>
+                            <th class="has-text-centered">Operaciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of personas">
+                            <td>{{item.id}}</td>
+                            <td>{{item.nombre}} {{item.apellido}}</td>
+                            <!--<td>{{item.tipodocumento.nombre}}</td>-->
+                            <td>{{item.tipodocumento.nombre}} - {{item.documento}}</td>
+                            <td>{{item.lugarresidencia.nombre}}</td>
+                            <!--<td></td>-->
+                            <td>{{item.email}}</td>
+                            <td>{{item.telefono}}</td>
+                            <td>{{item.username}}</td>
+                            <td>
+                                <div class="columns">
+                                <div class="column">
+                                    <a class="button is-info" href="">
+                                        <span class="icon is-small">
+                                            <fa-icon icon="pen-to-square"></fa-icon>
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="column">
+                                    <a class="button is-danger" (click)="eliminar(item)">
+                                        <span class="icon is-small">
+                                            <fa-icon icon="trash"></fa-icon>
+                                        </span>
+                                    </a>
+                                </div>
+                                </div>
+                            </td> 
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <style>
+                .table {
+                  margin-left: auto;
+                  margin-right: auto;
+                }
+            </style>
+            <div class="field">
+                <a [routerLink]="['add']" class="button is-success">
+                    <span>Crear nueva persona</span>
+                    <span class="icon is-small">
+                        <fa-icon icon="file-circle-plus"></fa-icon>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
