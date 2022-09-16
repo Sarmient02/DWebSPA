@@ -16,7 +16,6 @@ export class AddComponent implements OnInit {
   personaForm: FormGroup;
   ciudades: any;
   documentos: any;
-  email = new FormControl('', []);
 
   constructor(
     
@@ -31,6 +30,7 @@ export class AddComponent implements OnInit {
   ngOnInit(): void {
 
     this.personaForm = this.fb.group({
+      id:[''],
       nombre : ['', Validators.required],
       apellido : ['', Validators.required],
       documento : ['', Validators.required],
@@ -58,11 +58,11 @@ export class AddComponent implements OnInit {
   guardar():void{
     this.personasService.savePersona(this.personaForm.value).subscribe(resp=>{
       this.personaForm.reset()
-      setTimeout(() => {
+      /*setTimeout(() => {
         setTimeout(() => {
           this.router.navigateByUrl("/persona");
         });
-      }, 3400);
+      }, 3400);*/
     },
       error=>[console.error(error), alert("Debe llenar todos los campos.")]
     )
