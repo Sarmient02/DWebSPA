@@ -1,19 +1,25 @@
 package com.example.personaBACKEND.model;
 
+import lombok.Data;
+
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Calendar;
+import java.util.Date;
 
 @Entity
+@Data
 @Table (name = "persona")
-public class Persona {
+public class Persona implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Long id;
 
     private String nombre;
     private String apellido;
     private String documento;
-    private String fechanacimiento;
+    private Calendar fechanacimiento;
     private String email;
     private String telefono;
     private String username;
@@ -21,16 +27,16 @@ public class Persona {
 
     @ManyToOne
     @JoinColumn (name="id_documento")
-    private TipoDocumento tipoDocumento;
+    private TipoDocumento tipodocumento;
 
     @ManyToOne
     @JoinColumn (name="id_ciudad")
-    private Ciudad lugarResidencia;
+    private Ciudad lugarresidencia;
 
     public Persona(){
 
     }
-    public Persona(String nombre, String apellido, String documento, String fechanacimiento, String email, String telefono, String username, String password, TipoDocumento tipoDocumento, Ciudad lugarResidencia) {
+    public Persona(String nombre, String apellido, String documento, Calendar fechanacimiento, String email, String telefono, String username, String password, TipoDocumento tipodocumento, Ciudad lugarresidencia) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.documento = documento;
@@ -39,15 +45,15 @@ public class Persona {
         this.telefono = telefono;
         this.username = username;
         this.password = password;
-        this.tipoDocumento = tipoDocumento;
-        this.lugarResidencia = lugarResidencia;
+        this.tipodocumento = tipodocumento;
+        this.lugarresidencia = lugarresidencia;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -75,11 +81,11 @@ public class Persona {
         this.documento = documento;
     }
 
-    public String getFechanacimiento() {
+    public Calendar getFechanacimiento() {
         return fechanacimiento;
     }
 
-    public void setFechanacimiento(String fechanacimiento) {
+    public void setFechanacimiento(Calendar fechanacimiento) {
         this.fechanacimiento = fechanacimiento;
     }
 
@@ -115,19 +121,19 @@ public class Persona {
         this.password = password;
     }
 
-    public TipoDocumento getTipoDocumento() {
-        return tipoDocumento;
+    public TipoDocumento getTipodocumento() {
+        return tipodocumento;
     }
 
-    public void setTipoDocumento(TipoDocumento tipoDocumento) {
-        this.tipoDocumento = tipoDocumento;
+    public void setTipodocumento(TipoDocumento tipoDocumento) {
+        this.tipodocumento = tipoDocumento;
     }
 
-    public Ciudad getLugarResidencia() {
-        return lugarResidencia;
+    public Ciudad getLugarresidencia() {
+        return lugarresidencia;
     }
 
-    public void setLugarResidencia(Ciudad lugarResidencia) {
-        this.lugarResidencia = lugarResidencia;
+    public void setLugarresidencia(Ciudad lugarResidencia) {
+        this.lugarresidencia = lugarResidencia;
     }
 }

@@ -1,14 +1,18 @@
 package com.example.personaBACKEND.model;
 
+import lombok.Data;
+
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
+@Data
 @Table(name = "tipodocumento")
-public class TipoDocumento {
+public class TipoDocumento implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Long id;
     private String nombre;
     private String descripcion;
 
@@ -21,11 +25,11 @@ public class TipoDocumento {
         this.descripcion = descripcion;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
