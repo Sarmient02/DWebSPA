@@ -1,8 +1,13 @@
 <section class="hero is-fullheight-with-navbar">
     <div class="hero-body has-text-centered">
-        <div class="container box">
-            <h1 class="title is-1">Crear nueva Persona</h1>
-            <form [formGroup]="personaForm" (ngSubmit)="guardar()">
+        <div class="container">
+            <div class="columns is-centered">
+            <form class="column box is-8" [formGroup]="personaForm" (ngSubmit)="guardar()">
+                <section class="hero is-success" style="border-radius: 5px; margin-bottom: 15px;">
+                    <div class="hero-body container">
+                            <p class="title">Crear nueva Persona</p>
+                    </div>
+                </section>
                 <div class="columns is-multiline">
                     <div class="column is-half">
                         <p class="field">
@@ -80,6 +85,7 @@
                 
                 <a class="button is-danger" style="margin: 12px;" (click)="cancelar()">Volver</a>
             </form>
+        </div>
         </div>
     </div>
 </section>
