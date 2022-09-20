@@ -1,20 +1,109 @@
 <section class="hero is-fullheight-with-navbar">
     <div class="hero-body has-text-centered">
-        <div class="container box">
-            <h1 class="title is-1">Lista de Personas</h1>
-            <div class="columns">
-                <table class="table is-striped has-text-centered is-hoverable is-bordered">
+        <div class="container">
+            <div class="columns is-centered">
+                <table class="column box table is-striped has-text-centered is-hoverable is-bordered">
+                    <section class="hero is-success" style="border-radius: 5px; margin-bottom: 15px;">
+                        <div class="hero-body container">
+                            <h1 class="title">Lista de Personas</h1>
+                        </div>
+                    </section>
                     <thead>
                         <tr>
-                            <th class="has-text-centered">id</th>
-                            <th class="has-text-centered">Nombre</th>
+                            <th class="has-text-centered">
+                                <div class="columns is-vcentered">
+                                        <p class="column is-one-quarter">ID</p>
+                                        <div class="column is-one-quarter">
+                                            <button class="button" id="id" (click)="sortID()">
+                                                <span class="icon is-small">
+                                                    <fa-icon icon="arrow-down-1-9"></fa-icon>
+                                                </span>
+                                            </button>
+                                        </div>
+                                </div>
+                            </th>
+                            <th class="has-text-centered">
+                                <div class="columns is-vcentered">
+                                        <p class="column is-half">Nombre</p>
+                                        <div class="column is-two-quarter">
+                                            <button class="button" id="nombre" (click)="sortName()">
+                                                <span class="icon is-small">
+                                                    <fa-icon icon="arrow-down-a-z"></fa-icon>
+                                                </span>
+                                            </button>
+                                        </div>
+                                </div>
+                            </th>
                             <!--<th class="has-text-centered">Tipo de Documento</th>-->
-                            <th class="has-text-centered">Documento</th>
-                            <th class="has-text-centered">Lugar de Residencia</th>
+                            <th class="has-text-centered">
+                                <div class="columns is-vcentered">
+                                        <div class="column is-one-quarter">
+                                            <button class="button" id="nombre" (click)="sortTipoDocumento()">
+                                                <span class="icon is-small">
+                                                    <fa-icon icon="arrow-down-a-z"></fa-icon>
+                                                </span>
+                                            </button>
+                                        </div>
+                                        <p class="column ">Documento</p>
+                                        <div class="column is-one-quarter">
+                                            <button class="button" id="nombre" (click)="sortDocumento()">
+                                                <span class="icon is-small">
+                                                    <fa-icon icon="arrow-down-1-9"></fa-icon>
+                                                </span>
+                                            </button>
+                                        </div>
+                                </div>
+                            </th>
+                            <th class="has-text-centered">
+                                <div class="columns is-vcentered">
+                                        <p class="column is-three-fifths">Lugar de Residencia</p>
+                                        <div class="column">
+                                            <button class="button" id="nombre" (click)="sortLugarResidencia()">
+                                                <span class="icon is-small">
+                                                    <fa-icon icon="arrow-down-a-z"></fa-icon>
+                                                </span>
+                                            </button>
+                                        </div>
+                                </div>
+                            </th>
                             <!--<th class="has-text-centered">Fecha de Nacimiento</th>-->
-                            <th class="has-text-centered">Email</th>
-                            <th class="has-text-centered">Teléfono</th>
-                            <th class="has-text-centered">Usuario</th>
+                            <th class="has-text-centered">
+                                <div class="columns is-vcentered">
+                                        <p class="column is-one-fifth"></p>
+                                        <p class="column is-two-fifths">Email</p>
+                                        <div class="column">
+                                            <button class="button" id="nombre" (click)="sortEmail()">
+                                                <span class="icon is-small">
+                                                    <fa-icon icon="arrow-down-a-z"></fa-icon>
+                                                </span>
+                                            </button>
+                                        </div>
+                                </div>
+                            </th>
+                            <th class="has-text-centered">
+                                <div class="columns is-vcentered">
+                                        <p class="column is-half">Teléfono</p>
+                                        <div class="column">
+                                            <button class="button" id="nombre" (click)="sortTelefono()">
+                                                <span class="icon is-small">
+                                                    <fa-icon icon="arrow-down-1-9"></fa-icon>
+                                                </span>
+                                            </button>
+                                        </div>
+                                </div>
+                            </th>
+                            <th class="has-text-centered">
+                                <div class="columns is-vcentered">
+                                        <p class="column is-half">Usuario</p>
+                                        <div class="column">
+                                            <button class="button" id="nombre" (click)="sortUsuario()">
+                                                <span class="icon is-small">
+                                                    <fa-icon icon="arrow-down-a-z"></fa-icon>
+                                                </span>
+                                            </button>
+                                        </div>
+                                </div>
+                            </th>
                             <th class="has-text-centered">Operaciones</th>
                         </tr>
                     </thead>
